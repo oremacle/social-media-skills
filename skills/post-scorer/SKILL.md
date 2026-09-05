@@ -40,7 +40,6 @@ If cached data exists, use it. If not, ask the user:
     "multiSelect": false,
     "options": [
       {"label": "Scrape my posts", "description": "Pull my last 100 posts from LinkedIn via Apify. Takes 1 to 2 minutes, costs about $0.50."},
-      {"label": "Use Charlie Hills data", "description": "Score against Charlie Hills benchmarks (1,872 avg engagement, 500 posts analysed). Good fallback."},
       {"label": "Skip data scoring", "description": "Score against generic best practices only. Less accurate but instant."}
     ]
   }
@@ -53,9 +52,6 @@ If "Scrape my posts":
 3. Download results (do NOT use the fields parameter, it strips engagement data)
 4. Save as [username]-all-posts.json in the project
 5. Proceed to analysis
-
-If "Use Charlie Hills data":
-Look for cached Charlie data at **/linkedin-data/charlie-all-posts.json. If found, use it. If not, note you are using the benchmarks from this skill file (listed below).
 
 If "Skip data scoring":
 Fall back to voice-system-only scoring and general best practices.
@@ -127,7 +123,7 @@ Output in a code block:
 ```
 LINKEDIN POST SCORE
 
-Data source: [their posts / Charlie Hills benchmarks / generic]
+Data source: [their posts / generic best-practice benchmarks]
 Posts analysed: [number]
 Top 10% avg engagement: [number]
 
@@ -163,19 +159,13 @@ If rewrite requested, apply the fixes and output the revised post in a code bloc
 
 ## Fallback benchmarks (when no data available)
 
-Use these Charlie Hills benchmarks as the scoring baseline when the user picks "Use Charlie Hills data" and no cached file is found:
+Use these general LinkedIn best-practice benchmarks as the scoring baseline when the user picks "Skip data scoring" or when a scrape returns too little data to be reliable. Label these clearly as generic industry patterns, not the user's own data:
 
-Average engagement: 1,872 (reactions + comments x 3)
-Average reactions: 808
-Average comments: 355
-Average reposts: 61
-Comment-to-reaction ratio: 44%
-
-Top hook types: number-led (31%), bold claim (27%), contrarian (18%)
-Top formats: carousel (33%), image (29%), text only (22%)
-Average post length top 10%: 180 to 250 words
-CTA rate: 45% mention newsletter
-Comment gate rate: 5%
+Top hook types generally associated with strong performance: number-led, bold claim, contrarian, personal story
+Top formats generally associated with strong performance: carousel, image, text only
+Typical strong post length: 150 to 250 words
+Common effective CTA patterns: newsletter mention, comment gate, direct question
+Comment gate rate observed across strong performers: roughly 5%
 
 ## Rules
 

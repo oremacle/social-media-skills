@@ -157,7 +157,7 @@ Most people do not need more content. They need a system that turns content into
 ✦ MarTech AI newsletter: 200k+ readers getting weekly AI marketing frameworks.
 ✦ The AI Creators Club: live breakdowns, proven systems, and a community that helps you grow in weeks, not months.
 
-Brand partnerships and speaking: hello@influencermoso.com
+Brand partnerships and speaking: [email]
 
 Check out my Featured section below. Or DM me. I will point you in the right direction.
 ```
